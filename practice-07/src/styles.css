@@ -1,0 +1,26 @@
+:root { font-family: system-ui, sans-serif; color: #1e293b; background: #f1f5f9; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 960px; margin: 0 auto; padding: 24px; }
+section { background: white; padding: 20px; border-radius: 12px; margin: 16px 0; }
+label { display: block; margin-top: 12px; }
+input, select, button { font: inherit; padding: 8px; }
+input, select { max-width: 100%; }
+button { cursor: pointer; margin: 6px 8px 6px 0; }
+:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+ul { list-style: none; padding: 0; }
+li { border-bottom: 1px solid #cbd5e1; padding: 12px 0; overflow-wrap: anywhere; }
+.error, [role="alert"] { color: #b91c1c; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.stats { display: flex; flex-wrap: wrap; gap: 24px; margin: 0; }
+.stats dt { color: #475569; }
+.stats dd { margin: 0; font-size: 1.5rem; font-weight: 600; }
+.filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0 16px; }
+.filters input, .filters select, form input, form select { display: block; width: 100%; margin-top: 4px; }
+.task__title { margin: 0 0 4px; font-size: 1.05rem; }
+.task__meta { margin: 0 0 8px; color: #475569; }
+.task--done .task__title { text-decoration: line-through; color: #64748b; }
+.notice:empty { padding: 0; }
+.notice { background: #dcfce7; color: #14532d; padding: 8px 12px; border-radius: 8px; }
+.empty { color: #475569; }
+[aria-invalid="true"] { border: 2px solid #b91c1c; }
