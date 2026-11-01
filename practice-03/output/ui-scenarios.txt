@@ -1,0 +1,44 @@
+## Общий сценарий 6.5
+0 исходный, Все                    ids=[1,4,7,10] done=[1,10] всего/вып/ост/прогр/показ=4/2/2/50.0%/4 filter=all(1) focus=:BODY undoOff=true
+1 В работе                         ids=[4,7] done=[] всего/вып/ост/прогр/показ=4/2/2/50.0%/2 filter=pending(1) focus=:pending undoOff=true
+2 выполнить 4                      ids=[7] done=[] всего/вып/ост/прогр/показ=4/3/1/75.0%/1 filter=pending(1) focus=:pending undoOff=true
+3 Все                              ids=[1,4,7,10] done=[1,4,10] всего/вып/ост/прогр/показ=4/3/1/75.0%/4 filter=all(1) focus=:all undoOff=true
+4 удалить 7                        ids=[1,4,10] done=[1,4,10] всего/вып/ост/прогр/показ=3/3/0/100.0%/3 filter=all(1) focus=:all undoOff=false
+5 В работе                         ids=[] done=[] всего/вып/ост/прогр/показ=3/3/0/100.0%/0 filter=pending(1) пусто:«Нет задач по выбранному фильтру.» focus=:pending undoOff=false
+6 Все, переключить 1               ids=[1,4,10] done=[4,10] всего/вып/ост/прогр/показ=3/2/1/66.7%/3 filter=all(1) focus=1:toggle undoOff=false
+7 удалить 1, 4, 10                 ids=[] done=[] всего/вып/ост/прогр/показ=0/0/0/0.0%/0 filter=all(1) пусто:«Список задач пуст.» focus=:all undoOff=false
+перезагрузка                       ids=[1,4,7,10] done=[1,10] всего/вып/ост/прогр/показ=4/2/2/50.0%/4 filter=all(1) focus=:BODY undoOff=true
+## Клавиатура, клик по названию, некорректный id
+Enter на кнопке статуса 10         ids=[1,4,7,10] done=[1] всего/вып/ост/прогр/показ=4/1/3/25.0%/4 filter=all(1) focus=10:toggle undoOff=true
+Space на той же кнопке             ids=[1,4,7,10] done=[1,10] всего/вып/ост/прогр/показ=4/2/2/50.0%/4 filter=all(1) focus=10:toggle undoOff=true
+клик по названию 4                 ids=[1,4,7,10] done=[1,10] всего/вып/ост/прогр/показ=4/2/2/50.0%/4 filter=all(1) focus=:BODY undoOff=true
+клик по пустому месту карточки     ids=[1,4,7,10] done=[1,10] всего/вып/ост/прогр/показ=4/2/2/50.0%/4 filter=all(1) focus=:BODY undoOff=true
+data-task-id=777, статус           ids=[1,777,7,10] done=[1,10] всего/вып/ост/прогр/показ=4/2/2/50.0%/4 filter=all(1) msg:«Задача с id 777 не найдена.» focus=777:toggle undoOff=true
+data-task-id=4abc, удалить         ids=[1,,7,10] done=[1,10] всего/вып/ост/прогр/показ=4/2/2/50.0%/4 filter=all(1) msg:«Некорректный идентификатор задачи: «4abc».» focus=4abc:delete undoOff=true
+выбор фильтра Все                  ids=[1,4,7,10] done=[1,10] всего/вып/ост/прогр/показ=4/2/2/50.0%/4 filter=all(1) focus=:all undoOff=true
+5 быстрых переключений 7           ids=[1,4,7,10] done=[1,7,10] всего/вып/ост/прогр/показ=4/3/1/75.0%/4 filter=all(1) focus=7:toggle undoOff=true
+в Выполненных снять 1              ids=[7,10] done=[7,10] всего/вып/ост/прогр/показ=4/2/2/50.0%/2 filter=completed(1) focus=:completed undoOff=true
+переходы фильтров                  ids=[1,4] done=[] всего/вып/ост/прогр/показ=4/2/2/50.0%/2 filter=pending(1) focus=:pending undoOff=true
+demoTasks после действий = исходный
+название 100 символов: 100 | 0 | task-card is-completed | Низкий | true
+## Вариант
+метка: Индивидуальный вариант: 1
+исходно, Все                       ids=[11,23,37,41,58,64] done=[] всего/вып/ост/прогр/показ=6/0/6/0.0%/6 filter=all(1) focus=:BODY undoOff=true
+В работе                           ids=[11,23,37,41,58,64] done=[] всего/вып/ост/прогр/показ=6/0/6/0.0%/6 filter=pending(1) focus=:pending undoOff=true
+Выполненные                        ids=[] done=[] всего/вып/ост/прогр/показ=6/0/6/0.0%/0 filter=completed(1) пусто:«Нет задач по выбранному фильтру.» focus=:completed undoOff=true
+Все, переключить 23                ids=[11,23,37,41,58,64] done=[23] всего/вып/ост/прогр/показ=6/1/5/16.7%/6 filter=all(1) focus=23:toggle undoOff=true
+удалить 37                         ids=[11,23,41,58,64] done=[23] всего/вып/ост/прогр/показ=5/1/4/20.0%/5 filter=all(1) focus=:all undoOff=false
+итог: В работе                     ids=[11,41,58,64] done=[] всего/вып/ост/прогр/показ=5/1/4/20.0%/4 filter=pending(1) focus=:pending undoOff=false
+итог: Выполненные                  ids=[23] done=[23] всего/вып/ост/прогр/показ=5/1/4/20.0%/1 filter=completed(1) focus=:completed undoOff=false
+поля 23: Собрать список источников | Выполнена | Средний
+## Расширение Б: отмена удаления
+удалить первую 11, выполнить 41, фильтр Выполненные ids=[41] done=[41] всего/вып/ост/прогр/показ=5/1/4/20.0%/1 filter=completed(1) focus=:completed undoOff=false
+отменить                           ids=[41] done=[41] всего/вып/ост/прогр/показ=6/1/5/16.7%/1 filter=completed(1) focus=:completed undoOff=true
+Все                                ids=[11,23,37,41,58,64] done=[41] всего/вып/ост/прогр/показ=6/1/5/16.7%/6 filter=all(1) focus=:all undoOff=true
+повторная отмена (кнопка отключена) ids=[11,23,37,41,58,64] done=[41] всего/вып/ост/прогр/показ=6/1/5/16.7%/6 filter=all(1) focus=:all undoOff=true
+удалить среднюю 41                 ids=[11,23,37,58,64] done=[] всего/вып/ост/прогр/показ=5/0/5/0.0%/5 filter=all(1) focus=:all undoOff=false
+удалить последнюю 64 (заменяет 41) ids=[11,23,37,58] done=[] всего/вып/ост/прогр/показ=4/0/4/0.0%/4 filter=all(1) focus=:all undoOff=false
+отменить                           ids=[11,23,37,58,64] done=[] всего/вып/ост/прогр/показ=5/0/5/0.0%/5 filter=all(1) focus=64:delete undoOff=true
+удалить последнюю оставшуюся 10    ids=[] done=[] всего/вып/ост/прогр/показ=0/0/0/0.0%/0 filter=all(1) пусто:«Список задач пуст.» focus=:all undoOff=false
+отменить                           ids=[10] done=[10] всего/вып/ост/прогр/показ=1/1/0/100.0%/1 filter=all(1) focus=10:delete undoOff=true
+ещё раз                            ids=[10] done=[10] всего/вып/ост/прогр/показ=1/1/0/100.0%/1 filter=all(1) focus=:BODY undoOff=true

@@ -1,0 +1,27 @@
+## Эксперименты dom-events.html
+Отсутствующий элемент: null
+Пустая коллекция: 0
+dataset.taskId: 23 string
+Числовой id: 23
+Исходная длина NodeList: 1
+обращение к свойству null: TypeError
+Старый NodeList: 1
+Новый querySelectorAll: 2
+Старый NodeList: 1
+Новый querySelectorAll: 3
+lab-list сейчас: 3
+точка останова dom-events.js: [ 25 ]
+пауза на строке 25: target=lab-label currentTarget=lab-button eventPhase=3
+1. phase=1; target=lab-label; currentTarget=lab-card
+2. phase=3; target=lab-label; currentTarget=lab-button
+3. phase=3; target=lab-label; currentTarget=lab-card
+заголовок: ["<strong>Это текст, а не HTML</strong>",0,"&lt;strong&gt;Это текст, а не HTML&lt;/strong&gt;"]
+## Отладка handleTaskListClick (клик по «Выполнена» у id 4)
+точки: 85, 97
+стоп 1, строка 85: action=toggle
+  после Step over, строка 86: rawId="4" (string)
+  строка 87: id=4 (number), найдена запись {"id":4,"title":"Подготовить модель задач","completed":false,"priority":"high"}
+стоп 2, строка 97: result.ok=true, result.tasks === currentTasks: false
+  новый массив: [[1,true],[4,true],[7,false],[10,true]]
+  старый массив: [[1,true],[4,false],[7,false],[10,true]]; записи 1 одинаковые: true, записи 4: false
+после отрисовки: ["75.0%","Выполнена"]
