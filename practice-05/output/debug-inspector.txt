@@ -1,0 +1,15 @@
+## Инспектор Node: node --inspect-brk examples/timeout-abort.js, точки останова api-client.js:99 и :183
+точка останова api-client.js:99 установлена
+точка останова api-client.js:183 установлена
+стоп 1, строка 183 (requestJson): url=http://127.0.0.1:63748/api/tasks/999
+  response instanceof Response = true, status = 404, ok = false, content-type = application/json; charset=utf-8
+  bodyUsed = false
+стоп 2, строка 99 (classifyFailure): url=http://127.0.0.1:63748/api/debug/delay?ms=150
+  error.name = TimeoutError, signal.aborted = true, signal.reason.name = TimeoutError, timeoutSignal.aborted = true
+  signal.reason === timeoutSignal.reason → true
+стоп 3, строка 99 (classifyFailure): url=http://127.0.0.1:63748/api/debug/delay?ms=150
+  error.name = AbortError, signal.aborted = true, signal.reason.name = AbortError, timeoutSignal.aborted = false
+  signal.reason === timeoutSignal.reason → false
+стоп 4, строка 183 (requestJson): url=http://127.0.0.1:63748/api/debug/delay?ms=150
+  response instanceof Response = true, status = 200, ok = true, content-type = application/json; charset=utf-8
+  bodyUsed = false

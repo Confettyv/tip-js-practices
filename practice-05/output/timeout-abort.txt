@@ -1,0 +1,5 @@
+## node examples/timeout-abort.js
+404: kind=http; «Задача с id 999 не найдена.»; cause=undefined; 25 мс
+тайм-аут 20 мс, ответ через 150 мс: kind=timeout; «Превышено время ожидания ответа: 20 мс.»; cause=TimeoutError; 24 мс
+отмена сразу после старта: kind=aborted; «Запрос отменён вызывающим кодом.»; cause=AbortError; 1 мс
+запас времени 1000 мс: успех {"data":{"delayedMs":150}}

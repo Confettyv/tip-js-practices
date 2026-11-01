@@ -1,0 +1,17 @@
+## Задание 3. Наблюдение за HTTP (путь | статус | ok | Content-Type | форма тела)
+/health | 200 | ok=true | application/json; charset=utf-8 | { data: { status: string } } | {"status":"ok"}
+/tasks | 200 | ok=true | application/json; charset=utf-8 | { data: массив(12), meta: { total: number, filters: { completed: object, priority: object, categoryId: object, q: string } } } | ids=[1,4,7,10,13,16,19,22,25,28,31,34] total=12
+/tasks?completed=false&priority=high | 200 | ok=true | application/json; charset=utf-8 | { data: массив(3), meta: { total: number, filters: { completed: boolean, priority: string, categoryId: object, q: string } } } | ids=[4,13,34] total=3
+/tasks/25 | 200 | ok=true | application/json; charset=utf-8 | { data: { id: number, title: string, completed: boolean, priority: string, categoryId: number } } | {"id":25,"title":"Исправить обработку ошибок","completed":true,"priority":"high","categoryId":2}
+/tasks/999 | 404 | ok=false | application/json; charset=utf-8 | { error: { code: string, message: string, details: { id: number } } } | code=TASK_NOT_FOUND message=«Задача с id 999 не найдена.» details={"id":999}
+/categories | 200 | ok=true | application/json; charset=utf-8 | { data: массив(3), meta: { total: number } } | ids=[1,2,3] total=3
+
+## npm run example:fetch
+status: 200
+ok: true
+content-type: application/json; charset=utf-8
+ids: [ 4, 13, 34 ]
+meta: {
+  total: 3,
+  filters: { completed: false, priority: 'high', categoryId: null, q: '' }
+}
