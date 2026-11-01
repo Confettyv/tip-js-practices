@@ -1,0 +1,12 @@
+1 | kind=error; «Нет соединения с учебным API. Проверьте, запущен ли npm start.»; retry видна=true
+2 | после повтора kind=ready; задач 12; категорий в форме 3; retry видна=false
+3 | kind=empty; «По выбранным условиям задач нет.»; total=0; список скрыт=true
+4 | запросов к API: 0; ошибки: title: Введите название задачи.; categoryId: Выберите категорию.; aria-invalid title=true
+5 | запросы: POST /tasks, GET /tasks; «Задача «Сдать ПР6» добавлена.»; поле очищено=true; после F5 есть id 35=true, total=13
+6 | id 4 после toggle completed=true; кнопка «Сохранить изменения»; тело PATCH {"title":"Переименованная выполненная","priority":"high","categoryId":2}; на сервере title=«Переименованная выполненная», completed=true
+7 | до 7 задач, id 4 есть; запросы: PATCH /tasks/4, GET /tasks?completed=false; после: 6, id 4 есть=false; «Задача № 4 отмечена выполненной.»
+8 | confirm → «Отмена»; запросов: 0; id 7 на месте=true
+9 | запросы: GET /tasks?priority=high, GET /tasks?priority=medium, GET /tasks?priority=low; отменено браузером: 2; на экране [7,22,31]; совпадает с priority=low: true
+10 | после удаления id 7 нет=true; после reset id 7 есть=true, total=12; «Учебные данные восстановлены.»
+В | фильтр completed=false; до [4,7,13,19,22,28,34] (total 7); запросы: PATCH /tasks/13, GET /tasks?completed=false; после [4,7,19,22,28,34] (total 6)
+Р | запросов во время ввода: 0; после паузы: GET /tasks?q=%D0%BE%D1%82%D1%87%D1%91%D1%82; на экране [31]

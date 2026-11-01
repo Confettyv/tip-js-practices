@@ -10,6 +10,7 @@
 | [ПР3](./practice-03/README.md) | DOM, события и интерфейс списка задач |
 | [ПР4](./practice-04/README.md) | Формы, валидация и localStorage |
 | [ПР5](./practice-05/README.md) | Асинхронные запросы, ошибки и отмена |
+| [ПР6](./practice-06/README.md) | Интерфейс поверх HTTP API |
 | [ПР8](./practice-08/README.md) | React-приложение и API |
 | [ПР9](./practice-09/README.md) | Собственный HTTP API |
 | [ПР10](./practice-10/README.md) | Изменение данных и интеграция с клиентом |
