@@ -1,0 +1,14 @@
+точка останова main.js:195 установлена
+точка останова main.js:212 установлена
+## Успешное добавление id 21
+стоп 1, handleFormSubmit:195: draft={"id":"21","title":"  Отладить форму  ","priority":"medium"}, editingId=null
+  typeof draft.id = "string"
+  Step over → 196: checked={"ok":true,"value":{"id":21,"title":"Отладить форму","priority":"medium"}}
+стоп 2, строка 212: result.ok=true, ids=[1,4,7,10,21], новая запись={"id":21,"title":"Отладить форму","completed":false,"priority":"medium"}, тот же массив=false
+  localStorage до записи: null
+после Resume: localStorage={"version":1,"tasks":[{"id":1,"title":"Изучить функции","completed":true,"priority":"medium"},{"id":4,"title":"Подготовить модель задач","completed":false,"priority":"high"},{"id":7,"title":"Проверить методы массивов","completed":false,"priority":"low"},{"id":10,"title":"Оформить README","completed":true,"priority":"medium"},{"id":21,"title":"Отладить форму","completed":false,"priority":"medium"}]}
+## Ошибка: повторный id 4
+стоп 1, строка 195: draft={"id":"4","title":"Дубликат","priority":"medium"}
+  Step over → 196: checked={"ok":false,"errors":{"id":"Задача с id 4 уже существует."}}
+  остановка на строке 212 была: false; storage не изменился: true
+  ошибка у поля: «Задача с id 4 уже существует.», aria-invalid=true
